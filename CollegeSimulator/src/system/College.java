@@ -1,6 +1,8 @@
 package system;
 
-public class College {
+import acm.graphics.GImage;
+
+public class College extends GImage {
 	
 	//Field Variables
 	private String name;
@@ -11,7 +13,8 @@ public class College {
 	private Major[] specialties;
 	private String description;
 	
-	public College(String name, int prestige, int difficulty, Major[] specialties, String description) {
+	public College(String name, int prestige, int difficulty, Major[] specialties, String description, String filePath) {
+		super(filePath);
 		this.name = name;
 		this.prestige = prestige;
 		this.acceptanceRate = 105 - prestige;

@@ -13,10 +13,6 @@ public class Avatar extends GCompound {
     private GOval head;
     private GRect body;
     private GPolygon hair;
-    private GLine leftArm;
-    private GLine rightArm;
-    private GLine leftLeg;
-    private GLine rightLeg;
     private Color skinTone;
     private Color hairColor;
     private Color shirtColor;

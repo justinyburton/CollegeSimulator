@@ -8,32 +8,39 @@ import javax.swing.JTextField;
 
 import acm.graphics.GCanvas;
 import acm.graphics.GLabel;
+import game.Game;
 import system.Avatar;
 
 public class AvatarNamer extends GCanvas {
 
-    private Avatar avatar;
+    Avatar avatar;
     private GLabel glabel;
     private JTextField textField;
     private JButton done;
+    private String name;
     
-    public AvatarNamer(Avatar avatar) {
+    public AvatarNamer(Avatar avatar, Game game) {
         this.avatar = avatar;
+        this.add(avatar, 450, 400);
         
-        this.glabel = new GLabel("Name your character:");
-        glabel.setFont("Times-PLAIN-12");
-        this.add(glabel, 300, 100);
+        glabel = new GLabel("Name your character:");
+        glabel.setFont("Century Gothic-PLAIN-18");
+        this.add(glabel, 250, 100);
         
-        this.textField = new JTextField("");
-        this.add(textField);
+        textField = new JTextField();
+        textField.setColumns(25);
+        textField.setHorizontalAlignment(JTextField.LEFT);
+        this.add(textField, 150, 150);
         
         done = new JButton("Done!");
         this.done.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
+                name = textField.getText();
+                System.out.println(name);
+                game.changeCanvas(new CollegeSelection());
             }
         });
-        this.add(done);
+        this.add(done, 475, 150);
         
     }
     

@@ -12,7 +12,7 @@ public class Game extends GraphicsProgram {
 	public static final int SCREEN_HEIGHT = 1080;
 	public static final int X_UNIT = SCREEN_WIDTH / 12;
 	public static final int Y_UNIT = SCREEN_HEIGHT / 12;
-	private Avatar avatar;
+	Avatar avatar;
 	
 	public void run() {
 		this.add(new Menu(this));

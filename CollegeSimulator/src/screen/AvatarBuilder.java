@@ -7,11 +7,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import acm.graphics.GCanvas;
+import game.Game;
 import system.Avatar;
 
 public class AvatarBuilder extends GCanvas {
 
-    private Avatar avatar;
+    Avatar avatar;
     private JButton skinTone;
     private JButton hairStyle;
     private JButton hairColor;
@@ -21,7 +22,7 @@ public class AvatarBuilder extends GCanvas {
     private final Color[] HAIR_COLORS = {new Color(0,0,0), new Color(140,70,20), new Color(255,160,0), new Color(255,255,0)};
     private final Color[] SHIRT_COLORS = {Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.BLUE, Color.BLACK};
     
-    public AvatarBuilder(Avatar avatar) {
+    public AvatarBuilder(Avatar avatar, Game game) {
         
         this.avatar = avatar;
         
@@ -62,7 +63,7 @@ public class AvatarBuilder extends GCanvas {
         finalize = new JButton("Finalize");
         this.finalize.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                //????
+                game.changeCanvas(new AvatarBuilder(avatar, game));
             }
         });
         

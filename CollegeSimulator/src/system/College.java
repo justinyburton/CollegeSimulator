@@ -15,14 +15,13 @@ public class College extends GImage {
 	private Major[] specialties;
 	private String description;
 	
-	/*
-	public static final College SU = new College("Springfield", 100, 70, {}, name, name);
-	public static final College FIT;
-	public static final College GC;
-	public static final College BU;
-	public static final College CC;
-	public static final College FSU;
-	*/
+	//List of Colleges
+	public static final College SU = new College("Springfield University", 100, 70, new Major[] {Major.CS, Major.ENGL, Major.HIST, Major.MATH, Major.PHYS}, "", "SU.jpg");
+	public static final College FIT = new College("Franklin Institute of Technology (FIT)", 98, 90, new Major[] {Major.CS, Major.ENGIN, Major.MATH, Major.PHYS}, "", "FIT.jpg");
+	public static final College GC = new College("Greenville College", 80, 80, new Major[] {Major.ART, Major.ENGL, Major.HIST, Major.THEA, Major.SPAN}, "", "GC.jpg");
+	public static final College AU = new College("Arlington University", 75, 70, new Major[] {Major.CS, Major.ENGIN, Major.HIST, Major.MATH, Major.THEA}, "", "AU.jpg");
+	public static final College CC = new College("Clinton College", 60, 65, new Major[] {Major.ART, Major.ENGL, Major.HIST, Major.MATH, Major.SPAN}, "", "CC.jpg");
+	public static final College FSU = new College("Fairview State University", 45, 40, new Major[] {Major.CS, Major.ENGIN, Major.MATH, Major.PHYS, Major.SPAN}, "", "FSU.jpg");
 	
 	public College(String name, int prestige, int difficulty, Major[] specialties, String description, String filePath) {
 		super(filePath);

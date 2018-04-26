@@ -6,7 +6,8 @@ public class Course {
 	private int number; //Course number
 	private int difficulty; //Difficulty of course [0-100]
 	private int credits; //Total credits, [0-5]
-
+	
+	//Course List
 	public static final Course ART1 = new Course("ART", 101, 50, 3);
 	public static final Course ART2 = new Course("ART", 102, 60, 3);
 	public static final Course CS1 = new Course("CS", 111, 75, 3);

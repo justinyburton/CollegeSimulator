@@ -8,7 +8,7 @@ import acm.graphics.GOval;
 import acm.graphics.GPolygon;
 import acm.graphics.GRect;
 
-public class Character extends GCompound {
+public class Avatar extends GCompound {
 
     private GOval head;
     private GRect body;
@@ -22,8 +22,13 @@ public class Character extends GCompound {
     private Color shirtColor;
     private boolean isLong;
     
-    public Character(double x, double y) {
-        head = new GOval(50,50);
+    public Avatar(double x, double y) {
+        
+        skinTone = new Color(255, 220, 175);
+        shirtColor = Color.RED;
+        hairColor = new Color(0, 0, 0);
+        
+        head = new GOval(5, -50, 50,50);
         head.setFilled(true);
         head.setFillColor(skinTone);
         
@@ -41,7 +46,6 @@ public class Character extends GCompound {
         this.add(hair);
         
         this.setLocation(x, y);
-        
     }
     
     public void changeSkinTone(Color skinTone) {
@@ -72,11 +76,27 @@ public class Character extends GCompound {
     
     public GPolygon newShortHair() {
         GPolygon out = new GPolygon();
+        out.addVertex(5, -25);
+        out.addVertex(4, -40);
+        out.addVertex(20, -55);
+        out.addVertex(40, -55);
+        out.addVertex(56, -40);
+        out.addVertex(55, -25);
+        out.addVertex(40, -40);
+        out.addVertex(20, -40);
         return out;
     }
     
     public GPolygon newLongHair() {
         GPolygon out = new GPolygon();
+        out.addVertex(5, 5);
+        out.addVertex(4, -40);
+        out.addVertex(20, -55);
+        out.addVertex(40, -55);
+        out.addVertex(56, -40);
+        out.addVertex(55, 5);
+        out.addVertex(42, -40);
+        out.addVertex(18, -40);
         return out;
     }
   

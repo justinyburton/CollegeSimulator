@@ -8,15 +8,16 @@ import javax.swing.JTextField;
 
 import acm.graphics.GCanvas;
 import acm.graphics.GLabel;
+import system.Avatar;
 
-public class CharacterNamer extends GCanvas {
+public class AvatarNamer extends GCanvas {
 
-    private Character avatar;
+    private Avatar avatar;
     private GLabel glabel;
     private JTextField textField;
     private JButton done;
     
-    public CharacterNamer(Character avatar) {
+    public AvatarNamer(Avatar avatar) {
         this.avatar = avatar;
         
         this.glabel = new GLabel("Name your character:");

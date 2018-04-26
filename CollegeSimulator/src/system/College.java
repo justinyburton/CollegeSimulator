@@ -4,6 +4,8 @@ import acm.graphics.GImage;
 
 public class College extends GImage {
 	
+	private static final long serialVersionUID = -6358763747539732319L;
+	
 	//Field Variables
 	private String name;
 	private int prestige; //Reputation of school. [1-100]
@@ -12,6 +14,15 @@ public class College extends GImage {
 	private int tuition; //Price per year of school.
 	private Major[] specialties;
 	private String description;
+	
+	/*
+	public static final College SU = new College("Springfield", 100, 70, {}, name, name);
+	public static final College FIT;
+	public static final College GC;
+	public static final College BU;
+	public static final College CC;
+	public static final College FSU;
+	*/
 	
 	public College(String name, int prestige, int difficulty, Major[] specialties, String description, String filePath) {
 		super(filePath);
@@ -50,5 +61,7 @@ public class College extends GImage {
 	public String getDescription() {
 		return new String(description);
 	}
+	
+	
 	
 }

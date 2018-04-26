@@ -8,11 +8,12 @@ public class CollegeSelection extends GCanvas {
 	
 	private static final long serialVersionUID = 7435310449856598566L;
 	
-	
-	
 	public CollegeSelection() {
 		
-		//springfieldU = new College("Springfield", 100, 70, {}, name, name);
+		final double widthUnit = this.getWidth() / 9;
+		final double heightUnit = this.getHeight() / 9;
+		
+		this.add(College.SU);
 		
 	}
 	

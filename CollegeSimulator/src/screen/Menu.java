@@ -13,6 +13,7 @@ public class Menu extends GCanvas {
 	public Menu() {
 		
 		JButton newGameButton = new JButton("New Game");
+		
 		this.add(newGameButton);
 		
 	}

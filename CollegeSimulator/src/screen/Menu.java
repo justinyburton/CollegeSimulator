@@ -20,12 +20,12 @@ public class Menu extends GCanvas {
 		this.setBounds(-Game.SCREEN_WIDTH, 0, Game.SCREEN_WIDTH, Game.SCREEN_HEIGHT);
 		this.setBackground(Color.BLUE);
 		
-		//JButton newGameButton = new JButton("New Game");
+		JButton newGameButton = new JButton("New Game");
 		
-		//newGameButton.setSize(Game.X_UNIT, Game.Y_UNIT);
-		//newGameButton.setLocation(-(newGameButton.getWidth() / 2), Game.Y_UNIT * 5);
+		newGameButton.setSize(Game.X_UNIT, Game.Y_UNIT);
+		newGameButton.setLocation(Game.X_UNIT * 5, Game.Y_UNIT * 5);
 		
-		//this.add(newGameButton);
+		this.add(newGameButton);
 		
 	}
 	

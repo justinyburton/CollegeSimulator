@@ -1,8 +1,8 @@
 package game;
 
-import acm.graphics.GCanvas;
 import acm.program.GraphicsProgram;
 import screen.Menu;
+import screen.Screen;
 import system.Avatar;
 
 public class Game extends GraphicsProgram {
@@ -19,9 +19,9 @@ public class Game extends GraphicsProgram {
 		this.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 	
-	public void changeCanvas(GCanvas canvas) {
+	public void changeScreen(Screen screen) {
 		this.removeAll();
-		this.add(canvas);
+		this.add(screen, 0, 0);
 	}
 	
 }

@@ -10,7 +10,7 @@ import acm.graphics.GCanvas;
 import game.Game;
 import system.Avatar;
 
-public class AvatarBuilder extends GCanvas {
+public class AvatarBuilder extends Screen {
 
     Avatar avatar;
     private JButton skinTone;
@@ -24,6 +24,8 @@ public class AvatarBuilder extends GCanvas {
     
     public AvatarBuilder(Avatar avatar, Game game) {
         
+    	super(game);
+    	
         this.avatar = avatar;
         
         int skinTonePosition = 0;
@@ -63,7 +65,7 @@ public class AvatarBuilder extends GCanvas {
         finalize = new JButton("Finalize");
         this.finalize.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                game.changeCanvas(new AvatarBuilder(avatar, game));
+                game.changeScreen(new AvatarBuilder(avatar, game));
             }
         });
         
@@ -80,6 +82,6 @@ public class AvatarBuilder extends GCanvas {
         if (arrayPointer >= max) {
           arrayPointer = 0;
         }
-      }
+    }
     
 }

@@ -1,6 +1,8 @@
 package system;
 
+import acm.graphics.GCompound;
 import acm.graphics.GImage;
+import game.Game;
 
 public class College extends GImage {
 	
@@ -31,6 +33,7 @@ public class College extends GImage {
 		this.difficulty = difficulty;
 		this.tuition = prestige * 550 + 10000;
 		this.specialties = specialties;
+		this.setSize(Game.X_UNIT * 2, Game.Y_UNIT * 2);
 	}
 	
 	public String toString() {

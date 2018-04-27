@@ -11,7 +11,7 @@ import acm.graphics.GLabel;
 import game.Game;
 import system.Avatar;
 
-public class AvatarNamer extends GCanvas {
+public class AvatarNamer extends Screen {
 
     Avatar avatar;
     private GLabel glabel;
@@ -20,6 +20,9 @@ public class AvatarNamer extends GCanvas {
     private String name;
     
     public AvatarNamer(Avatar avatar, Game game) {
+    	
+    	super(game);
+    	
         this.avatar = avatar;
         this.add(avatar, 450, 400);
         
@@ -37,7 +40,7 @@ public class AvatarNamer extends GCanvas {
             public void actionPerformed(ActionEvent e) {
                 name = textField.getText();
                 System.out.println(name);
-                game.changeCanvas(new CollegeSelection());
+                game.changeCanvas(new CollegeSelection(game));
             }
         });
         this.add(done, 475, 150);

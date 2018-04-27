@@ -21,7 +21,7 @@ public class CollegeSelection extends Screen {
 		System.out.println("College selection screen generated.");
 		this.setBackground(Color.RED);
 		
-		SULabel = new GLabel(College.SU.toString(), Game.X_UNIT * 2, Game.Y_UNIT);
+		SULabel = new GLabel(College.SU.toString(), Game.X_UNIT, Game.Y_UNIT);
 		this.add(SULabel);
 		this.add(College.SU, Game.X_UNIT, Game.Y_UNIT * 2);
 		

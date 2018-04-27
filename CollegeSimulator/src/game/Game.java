@@ -15,8 +15,8 @@ public class Game extends GraphicsProgram {
 	Avatar avatar;
 	
 	public void run() {
-		this.add(new Menu(this), 0, 0);
 		this.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+		this.add(new Menu(this), 0, 0);
 	}
 	
 	public void changeScreen(Screen screen) {

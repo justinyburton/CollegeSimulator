@@ -40,7 +40,7 @@ public class AvatarNamer extends Screen {
             public void actionPerformed(ActionEvent e) {
                 name = textField.getText();
                 System.out.println(name);
-                game.changeCanvas(new CollegeSelection(game));
+                game.changeScreen(new CollegeSelection(game));
             }
         });
         this.add(done, 475, 150);

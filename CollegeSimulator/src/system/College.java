@@ -33,7 +33,7 @@ public class College extends GImage {
 		this.difficulty = difficulty;
 		this.tuition = prestige * 550 + 10000;
 		this.specialties = specialties;
-		this.setSize(Game.X_UNIT * 2, Game.Y_UNIT * 2);
+		this.setSize(Game.X_UNIT * 2, Game.Y_UNIT * 3);
 	}
 	
 	public String toString() {

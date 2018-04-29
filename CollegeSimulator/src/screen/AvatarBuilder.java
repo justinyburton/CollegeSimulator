@@ -22,11 +22,11 @@ public class AvatarBuilder extends Screen {
     private final Color[] HAIR_COLORS = {new Color(0,0,0), new Color(140,70,20), new Color(255,160,0), new Color(255,255,0)};
     private final Color[] SHIRT_COLORS = {Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.BLUE, Color.BLACK};
     
-    public AvatarBuilder(Avatar avatar, Game game) {
+    public AvatarBuilder(Game game) {
         
         super(game);
     	
-        this.avatar = avatar;
+        this.avatar = game.getPlayer().getAvatar();
         
         int skinTonePosition = 0;
         skinTone = new JButton("Skin Tone");
@@ -65,7 +65,7 @@ public class AvatarBuilder extends Screen {
         finalize = new JButton("Finalize");
         finalize.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                game.changeScreen(new AvatarNamer(avatar, game));
+                game.changeScreen(new AvatarNamer(game));
             }
         });
         

@@ -18,11 +18,11 @@ public class AvatarNamer extends Screen {
     private JTextField textField;
     private JButton done;
     
-    public AvatarNamer(Avatar avatar, Game game) {
+    public AvatarNamer(Game game) {
     	
     	super(game);
     	
-        this.avatar = avatar;
+        this.avatar = game.getPlayer().getAvatar();
         this.add(avatar, 4*Game.X_UNIT, 2*Game.Y_UNIT);
         
         glabel = new GLabel("Name your character:");

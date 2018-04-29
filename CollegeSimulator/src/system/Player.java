@@ -22,7 +22,6 @@ public class Player {
 		setSanity(120 - college.getPrestige());
 		setParentalApproval(college.getPrestige() - 20);
 		setMoney(getMoney() - college.getTuition() / 2);
-		System.out.println(getMoney());
 	}
 
 	public int getSanity() {

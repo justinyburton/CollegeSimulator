@@ -29,6 +29,14 @@ public class Major {
 		this.prestige = prestige;
 	}
 	
+	public boolean hasRequirement(Course course) {
+		for (int i = 0; i < requiredCourses.length; i++) {
+			if (requiredCourses[i].equals(course))
+				return true;
+		}
+		return false;
+	}
+	
 	private int sumCredits(Course[] courses) {
 		int sum = 0;
 		for (int i = 0; i < courses.length; i++)

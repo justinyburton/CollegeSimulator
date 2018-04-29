@@ -31,24 +31,28 @@ public class CourseSelection extends Screen {
 		this.add(titleLabel);
 		
 		//The following lines create the labels representing each label
+		int ycount = 0;
+		int xcount = 0;
 		for (int i = 0; i < Course.ALL_COURSES.length; i++) {
 			
 			Course course = Course.ALL_COURSES[i];
 			
-			if (!game.getPlayer().hasCompleted(course) || !game.getPlayer().isTaking(course)) {
+			
+			
+			if (course.prereqsFulfilled(game.getPlayer()) && !game.getPlayer().hasCompleted(course) && !game.getPlayer().isTaking(course)) {
 				
 				String courseText = "<html><div style=\"font-size: 10px;margin-top: -10px;\"><p style=\"font-size: 20px;font-weight: bold;\">" +
-						course.toString() +
+						course.toString() + (game.getPlayer().getMajor().hasRequirement(course) ? " [Requirement]" : "") +
 						"</p><p style=\"margin-top: -10px;\"><strong>Difficulty:</strong> " + course.getDifficulty() + " / 100" +
-						"</p><p style=\"margin-top: -10px;\"><strong>Total Credits:</strong> " + course.getCredits() +
+						"</p><p style=\"margin-top: -10px;\"><strong>Credits:</strong> " + course.getCredits() +
 						"</p></div></html>";
 				
 				JEditorPane majorPane = new JEditorPane("text/html", courseText);
-				majorPane.setBounds(Game.X_UNIT * 5, (int) (Game.Y_UNIT * (i + 1.5)), Game.X_UNIT * 3, Game.Y_UNIT);
+				majorPane.setBounds(Game.X_UNIT * 4 + Game.X_UNIT * xcount * 3, (int) (Game.Y_UNIT * (ycount + 1.5)), Game.X_UNIT * 2, Game.Y_UNIT);
 				this.add(majorPane);
 				
 				JButton courseSelector = new JButton("Select " + course.toString());
-				courseSelector.setBounds(Game.X_UNIT * 4, (int) (Game.Y_UNIT * (i + 1.7)), Game.X_UNIT, (int) (Game.Y_UNIT * 0.8));
+				courseSelector.setBounds(Game.X_UNIT * 3 + Game.X_UNIT * xcount * 3, (int) (Game.Y_UNIT * (ycount + 1.7)), Game.X_UNIT, (int) (Game.Y_UNIT * 0.8));
 				courseSelector.addActionListener(new ActionListener() {
 				
 					@Override
@@ -56,7 +60,7 @@ public class CourseSelection extends Screen {
 					
 						game.getPlayer().getCurrentCourses().add(course);
 						
-						if (game.getPlayer().totalCredits() < 18) {
+						if (game.getPlayer().totalCredits() < 15) {
 							game.changeScreen(new CourseSelection(game));
 						} else {
 							game.changeScreen(new Menu(game));
@@ -66,6 +70,12 @@ public class CourseSelection extends Screen {
 					
 				});
 				this.add(courseSelector);
+
+				ycount++;
+				if (ycount > 9) {
+					xcount++;
+					ycount = 0;
+				}
 				
 			}
 			

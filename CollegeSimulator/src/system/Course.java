@@ -47,6 +47,18 @@ public class Course {
 		return false;
 	}
 	
+	public boolean prereqsFulfilled(Player player) {
+		
+		for (int i = 0; i < prereq.length; i++) {
+			if (!player.hasCompleted(prereq[i])) {
+				return false;
+			}
+		}
+		
+		return true;
+		
+	}
+	
 	public int getNumber() {
 		return number;
 	}

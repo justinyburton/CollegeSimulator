@@ -3,14 +3,14 @@ package system;
 import java.awt.Color;
 
 import acm.graphics.GCompound;
-import acm.graphics.GLine;
 import acm.graphics.GOval;
 import acm.graphics.GPolygon;
 import acm.graphics.GRect;
 
 public class Avatar extends GCompound {
 
-    private GOval head;
+    private static final long serialVersionUID = 1L;
+	private GOval head;
     private GRect body;
     private GPolygon hair;
     private Color skinTone;

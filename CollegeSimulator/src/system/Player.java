@@ -2,6 +2,7 @@ package system;
 
 public class Player {
 	
+	private String name;
 	private int sanity;
 	private int parentalApproval;
 	private int money;
@@ -74,6 +75,14 @@ public class Player {
 
 	public void setMajor(Major major) {
 		this.major = major;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

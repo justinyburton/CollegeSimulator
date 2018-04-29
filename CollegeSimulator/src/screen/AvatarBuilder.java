@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import acm.graphics.GCanvas;
 import game.Game;
 import system.Avatar;
 
 public class AvatarBuilder extends Screen {
 
-    Avatar avatar;
+    private static final long serialVersionUID = 1L;
+	Avatar avatar;
     private JButton skinTone;
     private JButton hairStyle;
     private JButton hairColor;

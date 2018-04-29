@@ -6,18 +6,17 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import acm.graphics.GCanvas;
 import acm.graphics.GLabel;
 import game.Game;
 import system.Avatar;
 
 public class AvatarNamer extends Screen {
 
-    Avatar avatar;
+    private static final long serialVersionUID = 1L;
+	Avatar avatar;
     private GLabel glabel;
     private JTextField textField;
     private JButton done;
-    private String name;
     
     public AvatarNamer(Avatar avatar, Game game) {
     	
@@ -38,7 +37,7 @@ public class AvatarNamer extends Screen {
         done = new JButton("Done!");
         done.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                name = textField.getText();
+                game.getPlayer().setName(textField.getText());
                 game.changeScreen(new CollegeSelection(game));
             }
         });

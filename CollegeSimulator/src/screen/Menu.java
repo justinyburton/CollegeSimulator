@@ -38,7 +38,7 @@ public class Menu extends Screen {
 		buttonFont = new Font(Font.SERIF, Font.BOLD, 30);
 		
 		//Create and add new game button
-		JButton newGameButton = new JButton("New Game");
+		newGameButton = new JButton("New Game");
 		newGameButton.setFont(buttonFont);
 		newGameButton.addActionListener(new ActionListener() {
 

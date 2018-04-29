@@ -30,7 +30,7 @@ public class AvatarBuilder extends Screen {
         
         int skinTonePosition = 0;
         skinTone = new JButton("Skin Tone");
-        this.skinTone.addActionListener(new ActionListener( ) {
+        skinTone.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
                 cycleInt(skinTonePosition, SKIN_TONES.length);
                 avatar.changeHairColor(SKIN_TONES[skinTonePosition]);
@@ -38,7 +38,7 @@ public class AvatarBuilder extends Screen {
         });
         
         hairStyle = new JButton("Hair Style");
-        this.hairStyle.addActionListener(new ActionListener( ) {
+        hairStyle.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
                 avatar.changeHairStyle();
             }
@@ -46,7 +46,7 @@ public class AvatarBuilder extends Screen {
         
         int hairColorPosition = 0;
         hairColor = new JButton("Hair Color");
-        this.hairColor.addActionListener(new ActionListener( ) {
+        hairColor.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
                 cycleInt(hairColorPosition, 4);
                 avatar.changeHairColor(HAIR_COLORS[hairColorPosition]);
@@ -55,7 +55,7 @@ public class AvatarBuilder extends Screen {
         
         int shirtColorPosition = 0;
         shirtColor = new JButton("Shirt Color");
-        this.shirtColor.addActionListener(new ActionListener( ) {
+        shirtColor.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
                 cycleInt(shirtColorPosition, 6);
                 avatar.changeShirtColor(SHIRT_COLORS[shirtColorPosition]);
@@ -63,17 +63,18 @@ public class AvatarBuilder extends Screen {
         });
         
         finalize = new JButton("Finalize");
-        this.finalize.addActionListener(new ActionListener( ) {
+        finalize.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
                 game.changeScreen(new AvatarBuilder(avatar, game));
             }
         });
         
-        this.add(skinTone);
-        this.add(hairStyle);
-        this.add(hairColor);
-        this.add(shirtColor);
-        this.add(finalize);
+        this.add(avatar, 5*Game.X_UNIT, 2.5*Game.Y_UNIT);
+        this.add(skinTone, 6.5*Game.X_UNIT, 1.5*Game.Y_UNIT);
+        this.add(hairStyle, 6.5*Game.X_UNIT, 2*Game.Y_UNIT);
+        this.add(hairColor, 6.5*Game.X_UNIT, 2.5*Game.Y_UNIT);
+        this.add(shirtColor, 6.5*Game.X_UNIT, 3*Game.Y_UNIT);
+        this.add(finalize, 6.5*Game.X_UNIT, 3.5*Game.Y_UNIT);
         
     }
     

@@ -24,26 +24,25 @@ public class AvatarNamer extends Screen {
     	super(game);
     	
         this.avatar = avatar;
-        this.add(avatar, 450, 400);
+        this.add(avatar, 4*Game.X_UNIT, 2*Game.Y_UNIT);
         
         glabel = new GLabel("Name your character:");
-        glabel.setFont("Century Gothic-PLAIN-18");
-        this.add(glabel, 250, 100);
+        glabel.setFont("Serif-PLAIN-18");
+        this.add(glabel, 5.5*Game.X_UNIT, Game.Y_UNIT);
         
         textField = new JTextField();
         textField.setColumns(25);
         textField.setHorizontalAlignment(JTextField.LEFT);
-        this.add(textField, 150, 150);
+        this.add(textField, 5*Game.X_UNIT, 2*Game.Y_UNIT);
         
         done = new JButton("Done!");
-        this.done.addActionListener(new ActionListener() {
+        done.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 name = textField.getText();
-                System.out.println(name);
                 game.changeScreen(new CollegeSelection(game));
             }
         });
-        this.add(done, 475, 150);
+        this.add(done, 7*Game.X_UNIT, 2*Game.Y_UNIT);
         
     }
     

@@ -1,6 +1,5 @@
 package screen;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,21 +20,17 @@ public class Menu extends Screen {
 		
 		super(game);
 		
-		this.setBackground(Color.BLUE);
-		
+		//Create and add new game button
 		JButton newGameButton = new JButton("New Game");
 		newGameButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//game.changeCanvas(new AvatarBuilder(new Avatar(50, 50), game));
 				game.changeScreen(new CollegeSelection(game));
 			}
 			
 		});
-		
 		newGameButton.setBounds(Game.X_UNIT * 5, Game.Y_UNIT * 5, Game.X_UNIT * 2, Game.Y_UNIT);
-		
 		this.add(newGameButton);
 		
 	}

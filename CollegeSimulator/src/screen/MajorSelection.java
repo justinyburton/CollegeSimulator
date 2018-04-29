@@ -18,23 +18,11 @@ public class MajorSelection extends Screen {
 	private Font titleFont;
 	private GLabel titleLabel;
 	
-	/*
-	private GLabel artLabel;
-	private GLabel csLabel;
-	private GLabel enginLabel;
-	private GLabel englLabel;
-	private GLabel histLabel;
-	private GLabel mathLabel;
-	private GLabel physLabel;
-	private GLabel theaLabel;
-	private GLabel spanLabel;
-	*/
-	
 	public MajorSelection(Game game) {
 		
 		super(game);
 		
-		//This creates the title and major font.
+		//This creates the title font.
 		titleFont = new Font(Font.SERIF, Font.BOLD, 40);
 		
 		//This creates the label at the top.
@@ -66,25 +54,13 @@ public class MajorSelection extends Screen {
 					
 					game.getPlayer().setMajor(major);
 					game.getPlayer().setParentalApproval(game.getPlayer().getParentalApproval() + major.getPrestige() - 50);
-					game.changeScreen(new Menu(game));
+					game.changeScreen(new CourseSelection(game));
 					
 				}
 				
 			});
 			this.add(majorSelector);
 		}
-		
-		/*
-		artLabel = new GLabel(name, eventMask, eventMask);
-		csLabel = new GLabel(name, eventMask, eventMask);
-		enginLabel = new GLabel(name, eventMask, eventMask);
-		englLabel = new GLabel(name, eventMask, eventMask);
-		histLabel = new GLabel(name, eventMask, eventMask);
-		mathLabel = new GLabel(name, eventMask, eventMask);
-		Label = new GLabel(name, eventMask, eventMask);
-		artLabel = new GLabel(name, eventMask, eventMask);
-		artLabel = new GLabel(name, eventMask, eventMask);
-		*/
 		
 	}
 

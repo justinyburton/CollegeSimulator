@@ -97,6 +97,7 @@ public class CollegeProfile extends Screen {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				game.getPlayer().selectCollege(college);
 				game.changeScreen(new CollegeSelection(game));
 			}
 			

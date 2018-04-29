@@ -44,7 +44,7 @@ public class Menu extends Screen {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				game.changeScreen(new CollegeSelection(game));
+				game.changeScreen(new AvatarBuilder(game.getPlayer().getAvatar(), game));
 			}
 			
 		});

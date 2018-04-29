@@ -1,4 +1,4 @@
-package screen;
+    package screen;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -24,7 +24,7 @@ public class AvatarBuilder extends Screen {
     
     public AvatarBuilder(Avatar avatar, Game game) {
         
-    	super(game);
+        super(game);
     	
         this.avatar = avatar;
         
@@ -48,7 +48,7 @@ public class AvatarBuilder extends Screen {
         hairColor = new JButton("Hair Color");
         hairColor.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                cycleInt(hairColorPosition, 4);
+                cycleInt(hairColorPosition, HAIR_COLORS.length);
                 avatar.changeHairColor(HAIR_COLORS[hairColorPosition]);
             }
         });
@@ -57,7 +57,7 @@ public class AvatarBuilder extends Screen {
         shirtColor = new JButton("Shirt Color");
         shirtColor.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                cycleInt(shirtColorPosition, 6);
+                cycleInt(shirtColorPosition, SHIRT_COLORS.length);
                 avatar.changeShirtColor(SHIRT_COLORS[shirtColorPosition]);
             }
         });

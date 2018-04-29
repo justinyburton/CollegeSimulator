@@ -18,7 +18,7 @@ public class Avatar extends GCompound {
     private Color shirtColor;
     private boolean isLong;
     
-    public Avatar(double x, double y) {
+    public Avatar() {
         
         skinTone = new Color(255, 220, 175);
         shirtColor = Color.RED;
@@ -40,8 +40,7 @@ public class Avatar extends GCompound {
         this.add(head);
         this.add(body);
         this.add(hair);
-        
-        this.setLocation(x, y);
+
     }
     
     public void changeSkinTone(Color skinTone) {

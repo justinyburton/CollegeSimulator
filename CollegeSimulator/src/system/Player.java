@@ -14,7 +14,7 @@ public class Player {
 		setSanity(50);
 		setParentalApproval(50);
 		setMoney(100000);
-		setAvatar(new Avatar(0, 0));
+		setAvatar(new Avatar());
 	}
 
 	public void selectCollege(College college) {

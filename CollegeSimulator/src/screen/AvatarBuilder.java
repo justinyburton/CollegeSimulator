@@ -65,7 +65,7 @@ public class AvatarBuilder extends Screen {
         finalize = new JButton("Finalize");
         finalize.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                game.changeScreen(new AvatarBuilder(avatar, game));
+                game.changeScreen(new AvatarNamer(avatar, game));
             }
         });
         

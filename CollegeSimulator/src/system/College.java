@@ -77,6 +77,15 @@ public class College extends GImage {
 		this.setSize(Game.X_UNIT * 2, Game.Y_UNIT * 3);
 	}
 	
+	//hasSpecialty returns true if major is a specialty
+	public boolean hasSpecialty(Major major) {
+		for (int i = 0; i < specialties.length; i++) {
+			if (specialties[i].equals(major))
+				return true;
+		}
+		return false;
+	}
+	
 	public String toString() {
 		return new String(name);
 	}

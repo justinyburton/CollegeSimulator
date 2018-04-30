@@ -109,6 +109,12 @@ public abstract class GamePlay extends Screen {
         	this.add(optionsArray[i], (i + 4) * Game.X_UNIT, Game.Y_UNIT * 7);
         }
         
+        //If the players stats are too poor, the game over screen appears.
+        if (game.getPlayer().lost()) {
+    		this.removeAll();
+    		this.add(new GameOver(game), 0, 0);
+        }
+        
     }
     
     //Abstract methods

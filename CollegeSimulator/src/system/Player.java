@@ -28,6 +28,7 @@ public class Player {
 		this.rest = 100;
 		this.hunger = 0;
 		this.currentLocation = Location.DORM;
+		this.GPA = 4.0;
 		
 		setAvatar(new Avatar());
 		setCompletedCourses(new ArrayList<Course>(Course.ALL_COURSES.length));
@@ -55,6 +56,10 @@ public class Player {
 			sum += currentCourses.get(i).getCredits();
 		}
 		return sum;
+	}
+	
+	public boolean lost() {
+		return sanity < 1 || rest < 1 || parentalApproval < 1 || money < 1 || loans > 300000 || hunger > 100 || GPA < 2.0;
 	}
 	
 	public int getSanity() {

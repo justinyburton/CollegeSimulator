@@ -1,4 +1,4 @@
-    package screen;
+package screen;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -18,6 +18,9 @@ public class AvatarBuilder extends Screen {
     private JButton hairColor;
     private JButton shirtColor;
     private JButton finalize;
+    private int skinTonePosition;
+    private int hairColorPosition;
+    private int shirtColorPosition;
     private final Color[] SKIN_TONES = {new Color(255,220,175), new Color(235,155,95), new Color(180,90,30), new Color(125,45,10), new Color(65,15,0)};
     private final Color[] HAIR_COLORS = {new Color(0,0,0), new Color(140,70,20), new Color(255,160,0), new Color(255,255,0)};
     private final Color[] SHIRT_COLORS = {Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.BLUE, Color.BLACK};
@@ -28,12 +31,12 @@ public class AvatarBuilder extends Screen {
     	
         this.avatar = game.getPlayer().getAvatar();
         
-        int skinTonePosition = 0;
+        skinTonePosition = 0;
         skinTone = new JButton("Skin Tone");
         skinTone.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                cycleInt(skinTonePosition, SKIN_TONES.length);
-                avatar.changeHairColor(SKIN_TONES[skinTonePosition]);
+                skinTonePosition = cycleInt(skinTonePosition, SKIN_TONES.length);
+                avatar.changeSkinTone(SKIN_TONES[skinTonePosition]);
             }
         });
         
@@ -44,20 +47,20 @@ public class AvatarBuilder extends Screen {
             }
         });
         
-        int hairColorPosition = 0;
+        hairColorPosition = 0;
         hairColor = new JButton("Hair Color");
         hairColor.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                cycleInt(hairColorPosition, HAIR_COLORS.length);
+                hairColorPosition = cycleInt(hairColorPosition, HAIR_COLORS.length);
                 avatar.changeHairColor(HAIR_COLORS[hairColorPosition]);
             }
         });
         
-        int shirtColorPosition = 0;
+        shirtColorPosition = 0;
         shirtColor = new JButton("Shirt Color");
         shirtColor.addActionListener(new ActionListener( ) {
             public void actionPerformed(ActionEvent e) {
-                cycleInt(shirtColorPosition, SHIRT_COLORS.length);
+                shirtColorPosition = cycleInt(shirtColorPosition, SHIRT_COLORS.length);
                 avatar.changeShirtColor(SHIRT_COLORS[shirtColorPosition]);
             }
         });
@@ -78,11 +81,12 @@ public class AvatarBuilder extends Screen {
         
     }
     
-    private void cycleInt(int arrayPointer, int max) {
+    private int cycleInt(int arrayPointer, int max) {
         arrayPointer++;
         if (arrayPointer >= max) {
           arrayPointer = 0;
         }
+        return arrayPointer;
     }
     
 }

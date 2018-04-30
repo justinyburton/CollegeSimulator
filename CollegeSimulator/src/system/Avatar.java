@@ -59,6 +59,7 @@ public class Avatar extends GCompound {
     }
     
     public void changeHairStyle() {
+        this.remove(hair);
         this.isLong = !this.isLong;
         if (this.isLong) {
             hair = newLongHair();
@@ -67,6 +68,8 @@ public class Avatar extends GCompound {
             hair = newShortHair();
         }
         hair.setFillColor(hairColor);
+        hair.setFilled(true);
+        this.add(hair);
     }
     
     public GPolygon newShortHair() {

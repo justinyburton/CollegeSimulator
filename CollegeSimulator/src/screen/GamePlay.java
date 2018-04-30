@@ -15,6 +15,7 @@ public class GamePlay extends Screen {
     private GLabel parentalApproval;
     private GLabel money;
     private GLabel loans;
+    private GLabel currentTime;
     
     
     public GamePlay(Game game) {
@@ -51,6 +52,10 @@ public class GamePlay extends Screen {
         loans = new GLabel("Loans: " + game.getPlayer().getLoans());
         loans.setFont("Serif-PLAIN-18");
         this.add(loans, 2*Game.X_UNIT, 4*Game.Y_UNIT);
+        
+        currentTime = new GLabel("Time: " + game.getTime().toString());
+        currentTime.setFont("Serif-PLAIN-18");
+        this.add(currentTime, 2*Game.X_UNIT, 4.5*Game.Y_UNIT);
         
         //Event
         

@@ -63,7 +63,7 @@ public class CourseSelection extends Screen {
 						if (game.getPlayer().totalCredits() < 15) {
 							game.changeScreen(new CourseSelection(game));
 						} else {
-							game.changeScreen(new Menu(game));
+							game.changeScreen(new GamePlay(game));
 						}
 						
 					}

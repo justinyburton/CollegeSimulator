@@ -4,6 +4,7 @@ import acm.program.GraphicsProgram;
 import screen.Menu;
 import screen.Screen;
 import system.Player;
+import system.Time;
 
 public class Game extends GraphicsProgram {
 
@@ -14,9 +15,11 @@ public class Game extends GraphicsProgram {
 	public static final int Y_UNIT = SCREEN_HEIGHT / 12;
 	
 	private Player player;
+	private Time time;
 	
 	public void run() {
-		this.setPlayer(new Player());
+		this.time = new Time();
+		this.player = new Player();
 		this.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 		this.add(new Menu(this), 0, 0);
 	}
@@ -30,8 +33,8 @@ public class Game extends GraphicsProgram {
 		return player;
 	}
 
-	public void setPlayer(Player player) {
-		this.player = player;
+	public Time getTime() {
+		return time;
 	}
 	
 }

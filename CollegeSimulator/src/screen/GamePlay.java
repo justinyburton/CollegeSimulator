@@ -99,8 +99,8 @@ public abstract class GamePlay extends Screen {
         event.setFont(eventFont);
 		event.setEditable(false);
 		event.setBackground(Game.BACKGROUND_COLOR);
-    	event.setBounds(Game.X_UNIT * 4, Game.Y_UNIT * 1, Game.X_UNIT * 7, Game.Y_UNIT * 4);
-    	this.add(event);
+    	    event.setBounds(Game.X_UNIT * 4, Game.Y_UNIT * 1, Game.X_UNIT * 7, Game.Y_UNIT * 4);
+    	    this.add(event);
     	
         //Options
         JButton[] optionsArray = options();

@@ -42,6 +42,8 @@ public class MajorSelection extends Screen {
 					"</p></div></html>";
 			
 			JEditorPane majorPane = new JEditorPane("text/html", majorText);
+			majorPane.setEditable(false);
+			majorPane.setBackground(Game.BACKGROUND_COLOR);
 			majorPane.setBounds(Game.X_UNIT * 5, (int) (Game.Y_UNIT * (i + 1.5)), Game.X_UNIT * 3, Game.Y_UNIT);
 			this.add(majorPane);
 			

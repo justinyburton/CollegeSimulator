@@ -48,6 +48,8 @@ public class CourseSelection extends Screen {
 						"</p></div></html>";
 				
 				JEditorPane majorPane = new JEditorPane("text/html", courseText);
+				majorPane.setEditable(false);
+				majorPane.setBackground(Game.BACKGROUND_COLOR);
 				majorPane.setBounds(Game.X_UNIT * 4 + Game.X_UNIT * xcount * 3, (int) (Game.Y_UNIT * (ycount + 1.5)), Game.X_UNIT * 2, Game.Y_UNIT);
 				this.add(majorPane);
 				

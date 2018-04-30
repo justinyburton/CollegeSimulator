@@ -1,5 +1,7 @@
 package game;
 
+import java.awt.Color;
+
 import acm.program.GraphicsProgram;
 import screen.Menu;
 import screen.Screen;
@@ -13,6 +15,7 @@ public class Game extends GraphicsProgram {
 	public static final int SCREEN_HEIGHT = 1080;
 	public static final int X_UNIT = SCREEN_WIDTH / 12;
 	public static final int Y_UNIT = SCREEN_HEIGHT / 12;
+	public static final Color BACKGROUND_COLOR = new Color(245, 245, 220);
 	
 	private Player player;
 	private Time time;

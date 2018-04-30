@@ -3,6 +3,8 @@ package screen;
 import game.Game;
 import system.Avatar;
 
+import java.awt.Font;
+
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
 
@@ -24,6 +26,7 @@ public abstract class GamePlay extends Screen {
     private GLabel currentTime;
     private GLabel currentLocation;
     
+    private Font eventFont;
     private JEditorPane event;
     
     public GamePlay(Game game) {
@@ -77,9 +80,15 @@ public abstract class GamePlay extends Screen {
         currentLocation.setFont("Serif-BOLD-20");
         this.add(currentLocation, 2 * Game.X_UNIT, 10 * Game.Y_UNIT);
         
+        //Event Font
+        eventFont = new Font(Font.SERIF, Font.PLAIN, 20);
+        
         //Event
         event = new JEditorPane();
         event.setText(eventText());
+        event.setFont(eventFont);
+		event.setEditable(false);
+		event.setBackground(Game.BACKGROUND_COLOR);
     	event.setBounds(Game.X_UNIT * 4, Game.Y_UNIT * 1, Game.X_UNIT * 7, Game.Y_UNIT * 4);
     	this.add(event);
     	

@@ -17,6 +17,7 @@ public abstract class Screen extends GCanvas {
 		
 		this.game = game; //Sets the game.
 		this.setSize(Game.SCREEN_WIDTH, Game.SCREEN_HEIGHT); //Sets the screen size.
+		this.setBackground(Game.BACKGROUND_COLOR);
 		
 	}
 

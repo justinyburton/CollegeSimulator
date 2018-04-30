@@ -58,6 +58,8 @@ public class CollegeProfile extends Screen {
 		
 		//Creating and adding the statistics text pane.
 		stats = new JEditorPane("text/html", statsString);
+		stats.setEditable(false);
+		stats.setBackground(Game.BACKGROUND_COLOR);
 		stats.setBounds(Game.X_UNIT * 4, (int) (Game.Y_UNIT * 1.7), Game.X_UNIT * 7, Game.Y_UNIT * 3);
 		this.add(stats);
 		
@@ -66,6 +68,8 @@ public class CollegeProfile extends Screen {
 		
 		//Creating and adding the description text pane.
 		description = new JTextArea(college.getDescription());
+		description.setEditable(false);
+		description.setBackground(Game.BACKGROUND_COLOR);
 		description.setBounds(Game.X_UNIT, Game.Y_UNIT * 5, Game.X_UNIT * 10, Game.Y_UNIT * 4);
 		description.setLineWrap(true);
 		description.setWrapStyleWord(true);

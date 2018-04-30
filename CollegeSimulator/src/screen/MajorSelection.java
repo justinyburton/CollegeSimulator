@@ -53,7 +53,7 @@ public class MajorSelection extends Screen {
 				public void actionPerformed(ActionEvent e) {
 					
 					game.getPlayer().setMajor(major);
-					game.getPlayer().setParentalApproval(game.getPlayer().getParentalApproval() + major.getPrestige() - 50);
+					game.getPlayer().changeParentalApproval(major.getPrestige() - 50);
 					game.changeScreen(new CourseSelection(game));
 					
 				}

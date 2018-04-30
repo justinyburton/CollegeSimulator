@@ -19,6 +19,7 @@ public class Game extends GraphicsProgram {
 	
 	public void run() {
 		this.time = new Time();
+		this.time.changeTime(0, 6, 0);
 		this.player = new Player();
 		this.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 		this.add(new Menu(this), 0, 0);

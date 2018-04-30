@@ -25,7 +25,28 @@ public class Time {
 			amOrPm = "pm";
 		String daysPart = "Day " + days;
 		int newHours = hours == 0 ? 12 : hours;
-		return daysPart + " " + newHours + ":" + ((minutes < 10) ? ("0" + minutes) : minutes) + " " + amOrPm;
+		return dayOfWeek() + ", " + daysPart + " " + newHours + ":" + ((minutes < 10) ? ("0" + minutes) : minutes) + " " + amOrPm;
+	}
+	
+	public String dayOfWeek() {
+		switch (dayOfWeek) {
+			case 0:
+				return "Monday";
+			case 1:
+				return "Tuesday";
+			case 2:
+				return "Wednesday";
+			case 3:
+				return "Thursday";
+			case 4:
+				return "Friday";
+			case 5:
+				return "Saturday";
+			case 6:
+				return "Sunday";
+			default:
+				return "Monday";
+		}
 	}
 	
 	public int getDays() {

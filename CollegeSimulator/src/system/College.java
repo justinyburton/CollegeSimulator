@@ -59,7 +59,7 @@ public class College extends GImage {
 	
 	//List of Colleges
 	public static final College SU = new College("Springfield University", 100, 70, new Major[] {Major.CS, Major.ENGL, Major.HIST, Major.MATH, Major.PHYS}, SU_DESCRIPTION, "SU.jpg");
-	public static final College FIT = new College("Franklin Institute of Technology (FIT)", 98, 90, new Major[] {Major.CS, Major.ENGIN, Major.MATH, Major.PHYS}, FIT_DESCRIPTION, "FIT.jpg");
+	public static final College FIT = new College("Franklin Institute of Technology", 98, 90, new Major[] {Major.CS, Major.ENGIN, Major.MATH, Major.PHYS}, FIT_DESCRIPTION, "FIT.jpg");
 	public static final College GC = new College("Greenville College", 80, 80, new Major[] {Major.ART, Major.ENGL, Major.HIST, Major.THEA, Major.SPAN}, GC_DESCRIPTION, "GC.jpg");
 	public static final College AU = new College("Arlington University", 75, 70, new Major[] {Major.CS, Major.ENGIN, Major.HIST, Major.MATH, Major.THEA}, AU_DESCRIPTION, "AU.jpg");
 	public static final College CC = new College("Clinton College", 60, 65, new Major[] {Major.ART, Major.ENGL, Major.HIST, Major.MATH, Major.SPAN}, CC_DESCRIPTION, "CC.jpg");

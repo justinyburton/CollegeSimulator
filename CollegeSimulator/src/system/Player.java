@@ -6,19 +6,27 @@ public class Player {
 	
 	private String name;
 	private int sanity;
+	private int rest;
 	private int parentalApproval;
 	private int money;
 	private int loans;
+	private int hunger;
 	private Avatar avatar;
 	private College college;
 	private Major major;
 	private ArrayList<Course> completedCourses;
 	private ArrayList<Course> currentCourses;
+	private Location currentLocation;
 	
 	public Player() {
-		setSanity(50);
-		setParentalApproval(50);
-		setMoney(100000);
+		this.sanity = 50;
+		this.parentalApproval = 50;
+		this.money = 100000;
+		this.loans = 100000;
+		this.rest = 100;
+		this.hunger = 0;
+		this.currentLocation = Location.DORM;
+		
 		setAvatar(new Avatar());
 		setCompletedCourses(new ArrayList<Course>(Course.ALL_COURSES.length));
 		setCurrentCourses(new ArrayList<Course>(Course.ALL_COURSES.length));
@@ -26,9 +34,9 @@ public class Player {
 
 	public void selectCollege(College college) {
 		this.college = college;
-		setSanity(120 - college.getPrestige());
-		setParentalApproval(college.getPrestige() - 20);
-		setMoney(getMoney() - college.getTuition() / 2);
+		changeSanity(70 - college.getPrestige());
+		changeParentalApproval(college.getPrestige() - 70);
+		changeMoney(-college.getTuition() / 2);
 	}
 	
 	public boolean hasCompleted(Course course) {
@@ -51,32 +59,32 @@ public class Player {
 		return sanity;
 	}
 
-	public void setSanity(int sanity) {
-		this.sanity = sanity;
+	public void changeSanity(int sanity) {
+		this.sanity += sanity;
 	}
 
 	public int getParentalApproval() {
 		return parentalApproval;
 	}
 
-	public void setParentalApproval(int parentalApproval) {
-		this.parentalApproval = parentalApproval;
+	public void changeParentalApproval(int parentalApproval) {
+		this.parentalApproval += parentalApproval;
 	}
 
 	public int getMoney() {
 		return money;
 	}
 
-	public void setMoney(int money) {
-		this.money = money;
+	public void changeMoney(int money) {
+		this.money += money;
 	}
 
 	public int getLoans() {
 		return loans;
 	}
 
-	public void setLoans(int loans) {
-		this.loans = loans;
+	public void changeLoans(int loans) {
+		this.loans += loans;
 	}
 
 	public Avatar getAvatar() {
@@ -121,6 +129,30 @@ public class Player {
 
 	public void setCurrentCourses(ArrayList<Course> currentCourses) {
 		this.currentCourses = currentCourses;
+	}
+
+	public int getRest() {
+		return rest;
+	}
+
+	public void changeRest(int rest) {
+		this.rest += rest;
+	}
+
+	public int getHunger() {
+		return hunger;
+	}
+
+	public void changeHunger(int hunger) {
+		this.hunger += hunger;
+	}
+
+	public Location getCurrentLocation() {
+		return currentLocation;
+	}
+
+	public void setCurrentLocation(Location currentLocation) {
+		this.currentLocation = currentLocation;
 	}
 	
 }

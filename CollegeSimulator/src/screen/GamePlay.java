@@ -56,13 +56,13 @@ public abstract class GamePlay extends Screen {
         parentalApproval.setFont("Serif-PLAIN-18");
         this.add(parentalApproval, 2*Game.X_UNIT, 3*Game.Y_UNIT);
         
-         rest = new GLabel("Rest: " + game.getPlayer().getRest());
-         rest.setFont("Serif-PLAIN-18");
-         this.add(rest, 2*Game.X_UNIT, 3.5*Game.Y_UNIT);
+        rest = new GLabel("Rest: " + game.getPlayer().getRest());
+        rest.setFont("Serif-PLAIN-18");
+        this.add(rest, 2*Game.X_UNIT, 3.5*Game.Y_UNIT);
          
-         hunger = new GLabel("Hunger: " + game.getPlayer().getHunger());
-         hunger.setFont("Serif-PLAIN-18");
-         this.add(hunger, 2*Game.X_UNIT, 4*Game.Y_UNIT);
+        hunger = new GLabel("Hunger: " + game.getPlayer().getHunger());
+        hunger.setFont("Serif-PLAIN-18");
+        this.add(hunger, 2*Game.X_UNIT, 4*Game.Y_UNIT);
         
         money = new GLabel("Money: " + game.getPlayer().getMoney());
         money.setFont("Serif-PLAIN-18");
@@ -89,8 +89,8 @@ public abstract class GamePlay extends Screen {
         event.setFont(eventFont);
 		event.setEditable(false);
 		event.setBackground(Game.BACKGROUND_COLOR);
-    	event.setBounds(Game.X_UNIT * 4, Game.Y_UNIT * 1, Game.X_UNIT * 7, Game.Y_UNIT * 4);
-    	this.add(event);
+    	    event.setBounds(Game.X_UNIT * 4, Game.Y_UNIT * 1, Game.X_UNIT * 7, Game.Y_UNIT * 4);
+    	    this.add(event);
     	
         //Options
         JButton[] optionsArray = options();

@@ -14,13 +14,10 @@ public class Event implements TakesTime {
     private int loans;
     private Game game;
     
-    public final Event SLEEP = new Event(game, 1, sanity+20, parentalApproval-10, rest+50, hunger+20, GPA, studying, money, loans);
-    public final Event STUDY = new Event(game, 1, sanity-20, parentalApproval+10, rest-20, hunger+30, GPA+.001, studying+1, money, loans);
-    public final Event GO_TO_CLASS = new Event(game, 1, sanity-15, parentalApproval+10, rest-20, hunger+20, GPA+.001, studying, money, loans);
-    public final Event EAT = new Event(game, 1, sanity+10, parentalApproval-5, rest-10, hunger-30, GPA, studying, money-10, loans);
     
     public Event(Game game, int hour, int sanity, int parentalApproval, int rest, int hunger, double GPA, int studying, int money, int loans) {
         
+    	this.game = game;
         takeTime(0, hour, 0);
         this.sanity = sanity;
         this.parentalApproval = parentalApproval;
@@ -44,7 +41,7 @@ public class Event implements TakesTime {
         game.getPlayer().changeRest(rest);
         game.getPlayer().changeHunger(hunger);
         game.getPlayer().changeGPA(GPA);
-        game.getPlayer().setStudying(studying);
+        game.getPlayer().changeStudying(studying);
         game.getPlayer().changeMoney(money);
         game.getPlayer().changeLoans(loans);
     }

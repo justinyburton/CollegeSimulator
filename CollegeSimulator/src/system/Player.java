@@ -174,8 +174,8 @@ public class Player {
 		return studying;
 	}
 
-	public void setStudying(int studying) {
-		this.studying = studying;
+	public void changeStudying(int studying) {
+		this.studying += studying;
 	}
 	
 	public void changeStudying() {

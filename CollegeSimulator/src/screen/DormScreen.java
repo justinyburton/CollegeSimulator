@@ -1,5 +1,6 @@
 package screen;
 
+import java.awt.Event;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -35,7 +36,7 @@ public class DormScreen extends GamePlay {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//Event.SLEEP.doAction(1);
+				Game.SLEEP.doAction();
 			}
 			
 		});

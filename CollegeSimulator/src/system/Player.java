@@ -11,6 +11,8 @@ public class Player {
 	private int money;
 	private int loans;
 	private int hunger;
+	private double GPA;
+	private int studying;
 	private Avatar avatar;
 	private College college;
 	private Major major;
@@ -153,6 +155,26 @@ public class Player {
 
 	public void setCurrentLocation(Location currentLocation) {
 		this.currentLocation = currentLocation;
+	}
+
+	public double getGPA() {
+		return GPA;
+	}
+
+	public void changeGPA(double GPA) {
+		this.GPA = GPA;
+	}
+
+	public int getStudying() {
+		return studying;
+	}
+
+	public void setStudying(int studying) {
+		this.studying = studying;
+	}
+	
+	public void changeStudying() {
+		
 	}
 	
 }

@@ -25,6 +25,8 @@ public abstract class GamePlay extends Screen {
     private GLabel loans;
     private GLabel currentTime;
     private GLabel currentLocation;
+    private GLabel GPA;
+    private GLabel studyTime;
     
     private Font eventFont;
     private JEditorPane event;
@@ -33,52 +35,60 @@ public abstract class GamePlay extends Screen {
         super(game);
         
         this.avatar = game.getPlayer().getAvatar();
-        this.add(avatar, 2*Game.X_UNIT, 7*Game.Y_UNIT);
+        this.add(avatar, 1.5*Game.X_UNIT, 8*Game.Y_UNIT);
         
         //Attributes
         name = new GLabel("Name: " + game.getPlayer().getName());
         name.setFont("Serif-PLAIN-18");
-        this.add(name, 2*Game.X_UNIT, Game.Y_UNIT);
+        this.add(name, Game.X_UNIT, Game.Y_UNIT);
         
         college = new GLabel("College: " + game.getPlayer().getCollege());
         college.setFont("Serif-PLAIN-18");
-        this.add(college, 2*Game.X_UNIT, 1.5*Game.Y_UNIT);
+        this.add(college, Game.X_UNIT, 1.5*Game.Y_UNIT);
         
         major = new GLabel("Major: " + game.getPlayer().getMajor());
         major.setFont("Serif-PLAIN-18");
-        this.add(major, 2*Game.X_UNIT, 2*Game.Y_UNIT);
+        this.add(major, Game.X_UNIT, 2*Game.Y_UNIT);
         
         sanity = new GLabel("Sanity: " + game.getPlayer().getSanity());
         sanity.setFont("Serif-PLAIN-18");
-        this.add(sanity, 2*Game.X_UNIT, 2.5*Game.Y_UNIT);
+        this.add(sanity, Game.X_UNIT, 2.5*Game.Y_UNIT);
         
         parentalApproval = new GLabel("Parental Approval: " + game.getPlayer().getParentalApproval());
         parentalApproval.setFont("Serif-PLAIN-18");
-        this.add(parentalApproval, 2*Game.X_UNIT, 3*Game.Y_UNIT);
+        this.add(parentalApproval, Game.X_UNIT, 3*Game.Y_UNIT);
         
         rest = new GLabel("Rest: " + game.getPlayer().getRest());
         rest.setFont("Serif-PLAIN-18");
-        this.add(rest, 2*Game.X_UNIT, 3.5*Game.Y_UNIT);
-         
+        this.add(rest, Game.X_UNIT, 3.5*Game.Y_UNIT);
+        
         hunger = new GLabel("Hunger: " + game.getPlayer().getHunger());
         hunger.setFont("Serif-PLAIN-18");
-        this.add(hunger, 2*Game.X_UNIT, 4*Game.Y_UNIT);
+        this.add(hunger, Game.X_UNIT, 4*Game.Y_UNIT);
         
         money = new GLabel("Money: " + game.getPlayer().getMoney());
         money.setFont("Serif-PLAIN-18");
-        this.add(money, 2*Game.X_UNIT, 4.5*Game.Y_UNIT);
+        this.add(money, Game.X_UNIT, 4.5*Game.Y_UNIT);
         
         loans = new GLabel("Loans: " + game.getPlayer().getLoans());
         loans.setFont("Serif-PLAIN-18");
-        this.add(loans, 2*Game.X_UNIT, 5*Game.Y_UNIT);
+        this.add(loans, Game.X_UNIT, 5*Game.Y_UNIT);
+        
+        GPA = new GLabel("GPA: " + game.getPlayer().getGPA());
+        GPA.setFont("Serif-Plain-18");
+        this.add(GPA, Game.X_UNIT, 5.5 * Game.Y_UNIT);
+        
+        studyTime = new GLabel("Study Time: " + game.getPlayer().getStudying() + " hours");
+        studyTime.setFont("Serif-Plain-18");
+        this.add(studyTime, Game.X_UNIT, 6 * Game.Y_UNIT);
         
         currentTime = new GLabel("Time: " + game.getTime().toString());
         currentTime.setFont("Serif-PLAIN-18");
-        this.add(currentTime, 2*Game.X_UNIT, 5.5*Game.Y_UNIT);
+        this.add(currentTime, Game.X_UNIT, 6.5*Game.Y_UNIT);
         
         currentLocation = new GLabel("Current Location: " + game.getPlayer().getCurrentLocation());
         currentLocation.setFont("Serif-BOLD-20");
-        this.add(currentLocation, 2 * Game.X_UNIT, 10 * Game.Y_UNIT);
+        this.add(currentLocation, Game.X_UNIT, 10 * Game.Y_UNIT);
         
         //Event Font
         eventFont = new Font(Font.SERIF, Font.PLAIN, 20);

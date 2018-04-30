@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import acm.graphics.GLabel;
 import game.Game;
 import system.Avatar;
 
@@ -13,6 +14,7 @@ public class AvatarBuilder extends Screen {
 
     private static final long serialVersionUID = 1L;
 	Avatar avatar;
+	private GLabel label;
     private JButton skinTone;
     private JButton hairStyle;
     private JButton hairColor;
@@ -30,6 +32,10 @@ public class AvatarBuilder extends Screen {
         super(game);
     	
         this.avatar = game.getPlayer().getAvatar();
+        
+        label = new GLabel("Customize your Avatar: ");
+        label.setFont("Serif-PLAIN-18");
+        this.add(label, 5.5*Game.X_UNIT, Game.Y_UNIT);
         
         skinTonePosition = 0;
         skinTone = new JButton("Skin Tone");

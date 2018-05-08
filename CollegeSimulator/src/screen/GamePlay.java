@@ -110,10 +110,12 @@ public abstract class GamePlay extends Screen {
         }
         
         //If the players stats are too poor, the game over screen appears.
+        /*
         if (game.getPlayer().lost()) {
     		this.removeAll();
     		this.add(new GameOver(game), 0, 0);
         }
+        */
         
     }
     

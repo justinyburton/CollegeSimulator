@@ -8,6 +8,7 @@ import javax.swing.JButton;
 
 import acm.graphics.GLabel;
 import game.Game;
+import system.Player;
 
 public class GameOver extends Screen {
 	
@@ -21,6 +22,8 @@ public class GameOver extends Screen {
 	private GLabel titleLabel;
 	private Font buttonFont;
 	
+	private GLabel score;
+	
 	public GameOver(Game game) {
 		super(game);
 
@@ -28,9 +31,13 @@ public class GameOver extends Screen {
 		titleFont = new Font(Font.SERIF, Font.BOLD, 60);
 		
 		//Create and add the title label
-		titleLabel = new GLabel(loss, Game.X_UNIT * 4.62, Game.Y_UNIT * 4);
+		titleLabel = new GLabel(loss, Game.X_UNIT * 5.2, Game.Y_UNIT * 4);
 		titleLabel.setFont(titleFont);
 		this.add(titleLabel);
+		
+		//Create and add score label
+		score = new GLabel("You survived " + game.getTime().getDays() + " days.");
+		this.add(score,  Game.X_UNIT * 5, Game.Y_UNIT * 6);
 		
 		//Create the font for the button
 		buttonFont = new Font(Font.SERIF, Font.BOLD, 30);
@@ -42,6 +49,7 @@ public class GameOver extends Screen {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				game.setPlayer(new Player());
 				game.changeScreen(new AvatarBuilder(game));
 			}
 			

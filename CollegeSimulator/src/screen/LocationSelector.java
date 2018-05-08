@@ -40,7 +40,7 @@ public class LocationSelector extends GamePlay {
 		}
 		if (!getGame().getPlayer().getCurrentLocation().equals(Location.DORM)) {
 			options[1] = new JButton(Location.DORM.toString());
-			options[0].addActionListener(new ActionListener() {
+			options[1].addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -55,7 +55,7 @@ public class LocationSelector extends GamePlay {
 		}
 		if (!getGame().getPlayer().getCurrentLocation().equals(Location.CLASSROOM)) {
 			options[2] = new JButton(Location.CLASSROOM.toString());
-			options[0].addActionListener(new ActionListener() {
+			options[2].addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -70,7 +70,7 @@ public class LocationSelector extends GamePlay {
 		}
 		if (!getGame().getPlayer().getCurrentLocation().equals(Location.DINING_HALL)) {
 			options[3] = new JButton(Location.DINING_HALL.toString());
-			options[0].addActionListener(new ActionListener() {
+			options[3].addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {

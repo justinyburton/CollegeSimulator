@@ -33,10 +33,10 @@ public class Game extends GraphicsProgram {
 		this.time = new Time();
 		this.time.changeTime(0, 6, 0);
 		
-		SLEEP = new Event(this, 1, 20, -10, 50, 20, 0, 0, 0, 0);
-		STUDY = new Event(this, 1, -20, 10, -20, 30, 0.001, 1, 0, 0);
-		GO_TO_CLASS = new Event(this, 1, -15, 10, -20, 20, 0.001, 0, 0, 0);
-		EAT = new Event(this, 1, 10, -5, -10, -30, 0, 0, -10, 0);
+		SLEEP = new Event(this, 1, 2, -1, 5, 2, 0, 0, 0, 0);
+		STUDY = new Event(this, 1, -2, 1, -2, 3, 0.001, 1, 0, 0);
+		GO_TO_CLASS = new Event(this, 1, -2, 1, -2, 2, 0.001, 0, 0, 0);
+		EAT = new Event(this, 1, 10, -1, -1, -3, 0, 0, -1, 0);
 		
 		this.player = new Player();
 		this.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -50,6 +50,10 @@ public class Game extends GraphicsProgram {
 
 	public Player getPlayer() {
 		return player;
+	}
+	
+	public void setPlayer(Player player) {
+		this.player = player;
 	}
 
 	public Time getTime() {
